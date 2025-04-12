@@ -1,0 +1,1 @@
+#this is made for reading the database...... for trainging and testing
