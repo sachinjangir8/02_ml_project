@@ -1,5 +1,5 @@
 import sys
-import logging
+from src.loger import logging
 
 def error_details(error,error_detail:sys):
     # it gives 3 outputes third gives us about what kind of error is occured,,in which line
