@@ -9,6 +9,9 @@ from sklearn.model_selection import train_test_split
 # IT IS USED TO CREATE A CLASS VARIABLE...
 from dataclasses import dataclass
 
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DatatransformationConfig
+
 # if you do not want to use init to create a variablre then use @dataclass decoretor..
 @dataclass
 class DataInjectionConfig:
@@ -45,4 +48,7 @@ class DataInjection:
         
 if __name__=="__main__":
     obj=DataInjection()
-    obj.initiate_data_injection()
+    train_data,test_data=obj.initiate_data_injection()
+
+    Data_transformation=DataTransformation()
+    Data_transformation.initiate_data_transformation(train_data,test_data)
