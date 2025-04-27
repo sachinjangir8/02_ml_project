@@ -12,6 +12,9 @@ from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DatatransformationConfig
 
+from src.components.model_trainer import Modeltrainerconfig
+from src.components.model_trainer import Model_traner
+
 # if you do not want to use init to create a variablre then use @dataclass decoretor..
 @dataclass
 class DataInjectionConfig:
@@ -51,4 +54,7 @@ if __name__=="__main__":
     train_data,test_data=obj.initiate_data_injection()
 
     Data_transformation=DataTransformation()
-    Data_transformation.initiate_data_transformation(train_data,test_data)
+    train_arr,test_arr,_=Data_transformation.initiate_data_transformation(train_data,test_data)
+
+    Model_traner=Model_traner()
+    print(Model_traner.initiate_model_trainer(train_arr,test_arr))
