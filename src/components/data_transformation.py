@@ -10,7 +10,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder,StandardScaler
 
-from src.exception import custom_exception
+from src.exception import CustomException
 from src.loger import logging
 
 from src.utils import save_object
@@ -63,7 +63,7 @@ class DataTransformation:
             return preprocessor
             
         except Exception as e:
-            raise custom_exception(e,sys)
+            raise CustomException(e,sys)
         
         # here we are going to data transformation..
     
@@ -110,4 +110,4 @@ class DataTransformation:
                 self.Data_transfermation_config.preprocesser_obj_file_path,
             )
         except Exception as e:
-            raise custom_exception(e,sys)
+            raise CustomException(e,sys)

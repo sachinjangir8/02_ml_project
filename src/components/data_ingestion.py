@@ -1,7 +1,7 @@
 #this is made for reading the database...... for trainging and testing
 import os
 import sys
-from src.exception import custom_exception
+from src.exception import CustomException
 from src.loger import logging
 import pandas as pd
 
@@ -47,7 +47,7 @@ class DataInjection:
                 self.Injestion_config.test_data_path
             )
         except Exception as e:
-            raise custom_exception(e,sys)
+            raise CustomException(e,sys)
         
 if __name__=="__main__":
     obj=DataInjection()
