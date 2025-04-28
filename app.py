@@ -9,7 +9,7 @@ application=Flask(__name__)
 
 app=application
 
-## Route for a home page
+## Route for a predictdata page
 
 @app.route('/')
 def index():
@@ -18,7 +18,7 @@ def index():
 @app.route('/predictdata',methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='GET':
-        return render_template('home.html')
+        return render_template('predictdata.html')
     else:
         data=CustomData(
             gender=request.form.get('gender'),
@@ -38,7 +38,7 @@ def predict_datapoint():
         print("Mid Prediction")
         results=predict_pipeline.predict(pred_df)
         print("after Prediction")
-        return render_template('home.html',results=results[0])
+        return render_template('predictdata.html',results=results[0])
     
 
 if __name__=="__main__":
