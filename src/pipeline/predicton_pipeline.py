@@ -18,6 +18,10 @@ class PredictPipeline:
             preprocessor=load_object(file_path=preprocessor_path)
             print("After Loading")
             data_scaled=preprocessor.transform(features)
+
+            # if hasattr(model, "monotonic_cst"):
+            # # Handle accordingly if needed
+            #     pass
             preds=model.predict(data_scaled)
             return preds
         
